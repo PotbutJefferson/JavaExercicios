@@ -8,7 +8,7 @@ import modelo.base.Usuario;
 
 public class UsuarioTeste {
 	public static void main(String[] args) {
-
+            try {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exercicios-jpa");
 		EntityManager em = emf.createEntityManager();
 
@@ -20,5 +20,8 @@ public class UsuarioTeste {
 
 		em.close();
 		emf.close();
+            } finally {
+                System.out.println("Usuário inserido com sucesso!");
+            }
 	}
 }
